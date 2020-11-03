@@ -5,10 +5,10 @@ package com.example.unit.test.github.guava;
  */
 public class BasicUtility {
     public static void main(String[] args) {
-
+        test01();
     }
 
-    public void test01(){
+    public static void test01(){
 
     }
 }
