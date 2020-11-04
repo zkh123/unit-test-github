@@ -2,9 +2,11 @@ package com.example.unit.test.github.guava;
 
 import com.alibaba.fastjson.JSONObject;
 import com.google.common.base.Optional;
+import com.google.common.base.Preconditions;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 /**
  * 基本工具
@@ -17,7 +19,14 @@ public class BasicUtility {
 
 //        System.out.println(test02(Optional.of(""),Optional.of(null))); // Optional.of(null) java.lang.NullPointerException
 
-        test05();
+//        test05();
+
+        test06();
+    }
+
+    private static void test06(){
+        System.out.println(Objects.equals("a","a"));
+        System.out.println(Objects.equals(null,null));
     }
 
     public static void test05(){
