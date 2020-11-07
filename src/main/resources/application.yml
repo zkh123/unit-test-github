@@ -21,3 +21,18 @@ datasource:
     url: jdbc:mysql://localhost:3306/drools_test?characterEncoding=utf8&useSSL=false&serverTimezone=UTC
     username: root
     password: root
+
+
+spring:
+  application:
+    name: unit-test-github
+  redis:
+    host: 172.20.15.187
+    port: 6379
+    timeout: 6000ms
+    jedis:
+      pool:
+        max-active: 100
+        max-idle: 5
+        max-wait: 1000ms
+        min-idle: 0
