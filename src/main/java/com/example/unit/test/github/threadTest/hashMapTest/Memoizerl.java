@@ -19,7 +19,7 @@ public class Memoizerl<A,V> implements Computable<A,V> {
      * @return
      */
     @Override
-    public synchronized V compute(A arg) {
+    public synchronized V compute(A arg) throws Exception {
         V result = cache.get(arg);
         if (null == result){
             result = c.compute(arg);

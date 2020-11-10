@@ -20,7 +20,7 @@ public class Memoizer2<A,V> implements Computable<A,V> {
      * @return
      */
     @Override
-    public V compute(A arg) {
+    public V compute(A arg) throws Exception {
         V result = cache.get(arg);
         if (null == result){
             result = c.compute(arg);
