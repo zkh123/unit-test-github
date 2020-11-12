@@ -52,4 +52,16 @@ public class TryConcurrencyUpdate {
             e.printStackTrace();
         }
     }
+
+    private static void test(){
+        /**
+         * 线程的五种状态
+         * new
+         * runnable
+         * running
+         * blocked
+         * terminated
+         */
+    }
+
 }
