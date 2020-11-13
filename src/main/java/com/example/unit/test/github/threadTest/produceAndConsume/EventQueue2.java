@@ -6,10 +6,10 @@ import java.util.LinkedList;
 import java.util.concurrent.TimeUnit;
 
 /**
- * 线程不安全
+ * 线程安全
  */
 @Slf4j
-public class EventQueue {
+public class EventQueue2 {
 
     static class Event{
         private String param;
@@ -35,7 +35,7 @@ public class EventQueue {
     //生产
     public void offer(Event event){
         synchronized (linkedList){
-            if (linkedList.size() >= MAX_SIZE){
+            while(linkedList.size() >= MAX_SIZE){
                 console("队列已满");
                 try {
                     linkedList.wait();
@@ -45,14 +45,14 @@ public class EventQueue {
             }
             linkedList.addLast(event);
             console("往队列中添加Event : " + event.getParam());
-            linkedList.notify();
+            linkedList.notifyAll();
         }
     }
 
     //消费
     public void take(){
         synchronized (linkedList){
-            if (linkedList.size() == 0){
+            while(linkedList.size() == 0){
                 console("队列为空");
                 try {
                     linkedList.wait();
@@ -65,14 +65,14 @@ public class EventQueue {
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
-            EventQueue.Event event = linkedList.removeFirst();
+            EventQueue2.Event event = linkedList.removeFirst();
             console("从队列中消费Event : " + event.getParam());
-            linkedList.notify();
+            linkedList.notifyAll();
         }
     }
 
     private void console(String message){
-//        log.info(Thread.currentThread().getName() + " message " + message);
+        log.info(Thread.currentThread().getName() + " message " + message);
     }
 
 }
