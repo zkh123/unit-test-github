@@ -6,8 +6,8 @@ public class HljTest {
     }
 
     private static void test01(){
+        System.out.println("HljStep01 我搞点事情！");
         String startVersion = "3.2.0";
-
         String appVersion = "3.1.9";
         if(appVersion.compareToIgnoreCase(startVersion)>=0){
             System.out.println(false);
