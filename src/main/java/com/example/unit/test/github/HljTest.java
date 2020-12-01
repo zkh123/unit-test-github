@@ -1,6 +1,7 @@
 package com.example.unit.test.github;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -10,7 +11,14 @@ public class HljTest {
 
     public static void main(String[] args) {
 //        test01();
-        test2();
+//        test2();
+        test3();
+    }
+
+    private static void test3() {
+        long dateTime = 1602675154000l;
+        Date date = new Date(dateTime);
+        System.out.println(date.toString());
     }
 
     private static void test2(){

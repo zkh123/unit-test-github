@@ -27,8 +27,9 @@ spring:
   application:
     name: unit-test-github
   redis:
-    host: 172.20.15.187
+    host: r-3nsipq2qrjdaj7j7uv.redis.rds.aliyuncs.com
     port: 6379
+    password: t5muQo1VNsDenOm
     timeout: 6000ms
     jedis:
       pool:
