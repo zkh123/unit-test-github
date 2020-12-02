@@ -1,3 +1,5 @@
+
+
 druid:
   initialSize: 5
   minIdle: 5
@@ -27,9 +29,11 @@ spring:
   application:
     name: unit-test-github
   redis:
-    host: r-3nsipq2qrjdaj7j7uv.redis.rds.aliyuncs.com
+#    host: r-3nsipq2qrjdaj7j7uv.redis.rds.aliyuncs.com
+#    port: 6379
+#    password: t5muQo1VNsDenOm
+    host: 10.114.41.155
     port: 6379
-    password: t5muQo1VNsDenOm
     timeout: 6000ms
     jedis:
       pool:
@@ -37,3 +41,6 @@ spring:
         max-idle: 5
         max-wait: 1000ms
         min-idle: 0
+
+server:
+  port: 8099
